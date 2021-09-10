@@ -26,7 +26,6 @@ function App() {
 
   return (
     <Container>
-      <img src="" alt="" />
       <Quote phrase={phrase} />
       <Button
         onClick={apiCall}
