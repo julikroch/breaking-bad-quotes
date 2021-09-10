@@ -20,9 +20,17 @@ const Button = styled.button`
   border: 2px solid black;
 `;
 
+export type Phrase = {
+  author: string,
+  quote: string
+}
+
 function App() {
 
-  const [phrase, setPhrase] = useState({})
+  const [phrase, setPhrase] = useState<Phrase>({
+    author: '',
+    quote: ''
+  })
 
   const apiCall = async () => {
     const api = await fetch('https://breaking-bad-quotes.herokuapp.com/v1/quotes')
@@ -32,7 +40,7 @@ function App() {
 
   return (
     <Container>
-      <Quote />
+      <Quote phrase={phrase} />
 
       <Button
         onClick={apiCall}
