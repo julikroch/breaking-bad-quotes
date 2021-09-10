@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Quote from './components/Quote';
 import { Container, Button } from './style';
 
@@ -20,16 +20,19 @@ function App() {
     setPhrase(quote[0])
   }
 
+  useEffect(() => {
+    apiCall()
+  }, [])
+
   return (
     <Container>
+      <img src="" alt="" />
       <Quote phrase={phrase} />
-
       <Button
         onClick={apiCall}
       >
         Get phrase
       </Button>
-
     </Container>
   );
 }
