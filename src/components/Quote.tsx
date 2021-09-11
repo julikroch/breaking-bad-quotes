@@ -1,5 +1,5 @@
 import { Phrase } from '../App'
-import {PhraseContainer } from '../style'
+import { PhraseContainer } from '../style'
 
 type QuoteProps = {
     phrase: Phrase
